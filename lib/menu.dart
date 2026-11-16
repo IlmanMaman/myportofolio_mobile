@@ -3,16 +3,14 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  // Identitas Diri
   final String npm = "2506656803";
   final String nama = "Ilman Ghani Awliya";
   final String kelas = "PBP F";
 
-  // Daftar Tombol Aksi
   final List<ItemHomepage> items = [
-    ItemHomepage("View Projects", Icons.folder),
-    ItemHomepage("Add Project", Icons.add_circle),
-    ItemHomepage("Logout", Icons.logout),
+    ItemHomepage("View Projects", Icons.folder, Colors.blue),
+    ItemHomepage("Add Project", Icons.add_circle, Colors.green),
+    ItemHomepage("Logout", Icons.logout, Colors.red),
   ];
 
   @override
@@ -43,7 +41,6 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16.0),
-            // Teks Selamat Datang dan Grid 3 Kolom untuk Tombol Aksi
             Center(
               child: Column(
                 children: [
@@ -78,7 +75,7 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-// Widget Reusable untuk Kartu Informasi Identitas
+
 class InfoCard extends StatelessWidget {
   final String title;
   final String content;
@@ -111,11 +108,11 @@ class InfoCard extends StatelessWidget {
 class ItemHomepage {
   final String name;
   final IconData icon;
+  final Color color;
 
-  ItemHomepage(this.name, this.icon);
+  ItemHomepage(this.name, this.icon, this.color);
 }
 
-// Widget Reusable untuk Tombol Aksi dengan Feedback SnackBar
 class ItemCard extends StatelessWidget {
   final ItemHomepage item;
 
@@ -124,7 +121,7 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).colorScheme.secondary,
+      color: item.color,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: () {
