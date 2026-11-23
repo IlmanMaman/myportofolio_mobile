@@ -68,6 +68,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
                 ),
               ),
 
+              // === Description ===
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
@@ -93,6 +94,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
                 ),
               ),
 
+              // === Category ===
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: DropdownButtonFormField<String>(
@@ -117,6 +119,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
                 ),
               ),
 
+              // === Technologies ===
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
@@ -135,6 +138,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
                 ),
               ),
 
+              // === Project Link ===
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
@@ -153,6 +157,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
                 ),
               ),
 
+              // === Save Button ===
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
