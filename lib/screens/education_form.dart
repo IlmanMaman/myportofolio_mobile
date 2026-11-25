@@ -64,10 +64,7 @@ class _EducationFormPageState extends State<EducationFormPage> {
       appBar: AppBar(
         title: const Text(
           'Add Education Form',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         iconTheme: const IconThemeData(color: Colors.white),
@@ -120,10 +117,12 @@ class _EducationFormPageState extends State<EducationFormPage> {
                   ),
                   initialValue: _degree,
                   items: _degrees
-                      .map((degree) => DropdownMenuItem(
-                            value: degree,
-                            child: Text(degree),
-                          ))
+                      .map(
+                        (degree) => DropdownMenuItem(
+                          value: degree,
+                          child: Text(degree),
+                        ),
+                      )
                       .toList(),
                   onChanged: (String? newValue) {
                     if (newValue != null) {
@@ -164,8 +163,9 @@ class _EducationFormPageState extends State<EducationFormPage> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 12.0),
                 child: TextFormField(
-                  keyboardType:
-                      const TextInputType.numberWithOptions(decimal: true),
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
+                  ),
                   decoration: InputDecoration(
                     hintText: "Example: 3.85 (optional)",
                     labelText: "GPA (0.00 - 4.00)",
@@ -301,10 +301,14 @@ class _EducationFormPageState extends State<EducationFormPage> {
                                   Text('Institution: ${_institution.trim()}'),
                                   Text('Degree: $_degree'),
                                   Text(
-                                      'Field of Study: ${_fieldOfStudy.trim()}'),
+                                    'Field of Study: ${_fieldOfStudy.trim()}',
+                                  ),
                                   Text(
-                                      'GPA: ${_gpa.trim().isEmpty ? "-" : _gpa.trim()}'),
-                                  Text('Start Date: ${_formatDate(_startDate!)}'),
+                                    'GPA: ${_gpa.trim().isEmpty ? "-" : _gpa.trim()}',
+                                  ),
+                                  Text(
+                                    'Start Date: ${_formatDate(_startDate!)}',
+                                  ),
                                   Text('End Date: ${_formatDate(_endDate!)}'),
                                 ],
                               ),
